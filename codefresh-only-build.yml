@@ -8,7 +8,7 @@ steps:
     title: Cloning main repository...
     stage: prepare
     type: git-clone
-    repo: 'codefresh-contrib/react-sample-app'
+    repo: 'TanguyDucky/react-sample-app'
     revision: master
     git: github
   MyUnitTests:
@@ -16,8 +16,8 @@ steps:
     stage: test
     image: node:11.0
     commands:
-      - yarn install
-      - yarn test
+      - npm install
+      - npm test
     environment:
       - CI=true
   MyReactBuild:
@@ -25,4 +25,4 @@ steps:
     stage: build
     image: node:8.16
     commands:
-      - yarn build
+      - npm build
